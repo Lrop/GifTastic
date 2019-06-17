@@ -14,25 +14,38 @@
 
 <body>
 
-    <header id="header-buttons">
-        <button id="example-button">Example</button>
+    <header id="button-container">
+       
     </header>
+
+    <hr>
+
     <div class="container">
         <h1>GIPHY SEARCH</h1>
 
-        <input id="search-text" type="text" placeholder="Search..">
-        <button id="search-gifs" type="submit" onclick="getGif()">Search</button>
-        <div class="inner"></div>
-       
+        <p></p>
 
+        <!--
+        <input id="search-text" type="text" placeholder="Search..">
+        <button id="search-gifs" type="submit" class ="btn" onclick="getGif()">Search
+
+        <input type = "submit" value = "Submit" class = "btn" id = "submit">
+        </button>
+        ---->
+
+
+        <form class="comic-sans-font">
+                Add buttons for your favorite cartoons:<br>
+                <input type = "text" name = "cartoon-show" id = "cartoon-show" class="comic-sans-font">
+                <input type = "submit" value = "Submit" class = "btn" id = "submit" onclick="getGif()">
+            </form>
+       
+            <div class="inner"></div>
 
         <div id="buttons-view"></div>
 
         <form id="movie-form">
         
-          
-    
-          
         </form>
     
 
