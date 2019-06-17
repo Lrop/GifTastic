@@ -2,38 +2,40 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/app.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="app.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <title>GIPHY ANIMAL SEARCH</title>
 </head>
 
 <body>
 
+    <header id="header-buttons">
+        <button id="example-button">Example</button>
+    </header>
     <div class="container">
         <h1>GIPHY SEARCH</h1>
 
-        <!-- Rendered Buttons will get Dumped Here  -->
+        <input id="search-text" type="text" placeholder="Search..">
+        <button id="search-gifs" type="submit" onclick="getGif()">Search</button>
+        <div class="inner"></div>
+       
+
+
         <div id="buttons-view"></div>
 
         <form id="movie-form">
-            <label for="movie-input">Add an Animal!</label>
-            <input type="text" id="movie-input">
-            <br>
-
-            <!-- Button triggers new movie to be added -->
-            <input id="add-movie" type="submit" value="SEARCH">
+        
+          
+    
+          
         </form>
-
-        <!-- Movies will Get Dumped Here -->
-        <div id="movies-view"></div>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
 
     </div>
 </body>
-
 </html>
