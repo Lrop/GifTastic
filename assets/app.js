@@ -1,5 +1,4 @@
 var topics = ["Boats", "Planes", "Trains"];
-var numberOfGIFs = 10;
 var cutOffRating = "R";
 
 function renderButtons(){
@@ -10,25 +9,8 @@ function renderButtons(){
 		newButton.text(topics[i]);
 		$("#button-container").append(newButton);
 	}
-	//$(".cartoon-button").unbind("click");
-
-	$(".cartoon-button").on("click", function(){
-		$(".gif-image").unbind("click");
-		$("#gif-container").empty();
-		$("#gif-container").removeClass("dotted-border");
-		populateGIFContainer($(this).text());
-	});
-
-}
-
-function addButton(show){
-	if(topics.indexOf(show) === -1) {
-		topics.push(show);
-		$("#button-container").empty();
-		renderButtons();
-	}
-}
-
+};
+ 
 function getGif (){
 
 var input = $('#cartoon-show').val();
