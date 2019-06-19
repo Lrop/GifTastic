@@ -16,12 +16,13 @@
 
     <header id="button-container">
 
-            <button data-input="smoke">smoke</button>
-            <button data-input="fire">fire</button>
-            <button data-input="cars">cars</button>
-            <div id="gifs-appear-here">
-            </div>
-       
+            <button class="btn"data-input="smoke">Smoke</button>
+            <button data-input="fire">Fire</button>
+            <button data-input="cars">Cars</button>
+            <button data-input="beer">Beer</button>
+            <button data-input="fish">Fish</button>
+            <button data-input="ducks">Ducks</button>
+            
     </header>
 
     <hr>
@@ -31,19 +32,18 @@
 
       
         <form class="comic-sans-font">
-                Add buttons for your favorite gifs:<br>
+
+                <p>Add buttons for your favorite gifs:</p>
+                
+                <br>
+
                 <input type = "text" name = "gif-show" id = "gif-show" class="comic-sans-font">
                 <input type = "submit" value = "Submit" class = "btn" id = "submit" onclick="getGif()">
+
             </form>
        
             <p class="rating"></p>
             <div class="inner" id="gif"></div>
-
-        <div id="buttons-view"></div>
-
-        <form id="movie-form">
-        
-        </form>
     
 
     </div>

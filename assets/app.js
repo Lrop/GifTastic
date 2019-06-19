@@ -2,10 +2,9 @@ var buttons = ["Planes", "Trains", "Automobiles", "Charpings", "Cacti", "PabstBl
 
 function getGif(){
 
-  var gif = $('#gif-show')
-  //var input = $(this).attr("data-input");
+  var input = $('#gif-show').val();
 
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ gif +"&api_key=w1S2aIWlkRlLJu0hsXW7RjISiJS93vYU&limit=12";
+  var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ input +"&api_key=w1S2aIWlkRlLJu0hsXW7RjISiJS93vYU&limit=12";
 
 
   $.ajax({
@@ -15,13 +14,13 @@ function getGif(){
 
   .then(function(response){
 
-    var gif = response.data;
+    var giphy = response.data;
     
-    for ( i in gif)
+    for ( i in giphy)
    {
     
 
-    $('.inner').append("<img src='"+gif[i].images.original.url+"'/>")
+    $('.inner').append("<img src='"+giphy[i].images.original.url+"'/>")
 
   }
 
@@ -30,6 +29,7 @@ function getGif(){
 }
 
 
+//<---------RENDERING BUTTONS-------------------------------------------->
 function renderButtons(){
 	for(var i = 0; i < buttons.length; i++) {
 		var newButton = $("<button>");
@@ -39,7 +39,7 @@ function renderButtons(){
 		$("#button-container").append(newButton);
 	}
 };
-
+//<----------------------------------------------------->
 function addButton(show){
 	if(buttons.indexOf(show) === -1) {
 		buttons.push(show);
@@ -48,12 +48,11 @@ function addButton(show){
 	}
 }
 
-
+//<----------------------------------------------------->
 $(document).ready(function(){
 	renderButtons();
 	$("#submit").on("click", function(){
     event.preventDefault();
-    getGif();
 		addButton($("#gif-show").val().trim());
     $("#gif-show").val("");
     
