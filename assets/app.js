@@ -1,10 +1,11 @@
-var buttons = ["Planes", "Trains", "Automobiles", "Charpings", "Cacti", "PabstBlueRibbon"];
+var buttons = ["Planes", "Trains", "Automobiles", "Charpings", "Cacti", "PabstBlueRibbon", "Beer", "RollerCoaster"];
 
 function getGif(){
 
-  var input = $('#gif-show').val();
+  var gif = $('#gif-show')
+  //var input = $(this).attr("data-input");
 
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ input +"&api_key=w1S2aIWlkRlLJu0hsXW7RjISiJS93vYU&limit=12";
+  var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ gif +"&api_key=w1S2aIWlkRlLJu0hsXW7RjISiJS93vYU&limit=12";
 
 
   $.ajax({
@@ -14,19 +15,21 @@ function getGif(){
 
   .then(function(response){
 
-    var giphy = response.data;
+    var gif = response.data;
     
-    for ( i in giphy)
+    for ( i in gif)
    {
     
 
-    $('.inner').append("<img src='"+giphy[i].images.original.url+"'/>")
+    $('.inner').append("<img src='"+gif[i].images.original.url+"'/>")
 
   }
 
   });
 
 }
+
+
 function renderButtons(){
 	for(var i = 0; i < buttons.length; i++) {
 		var newButton = $("<button>");
@@ -49,7 +52,8 @@ function addButton(show){
 $(document).ready(function(){
 	renderButtons();
 	$("#submit").on("click", function(){
-		event.preventDefault();
+    event.preventDefault();
+    getGif();
 		addButton($("#gif-show").val().trim());
     $("#gif-show").val("");
     
