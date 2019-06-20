@@ -13,6 +13,9 @@ input {
 #button-container {
     font-size: 40px;
 }
+.container {
+    margin: auto;
+}
 body {
     background-color: aqua;
 }
@@ -37,6 +40,7 @@ img {
     flex-wrap: inherit;
     height: 200px;
     width: 200px;
+    padding: 5px;
 }
 hr {
     border-top: 1px solid black;
