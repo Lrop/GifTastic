@@ -1,4 +1,4 @@
-var buttons = ["Planes", "Trains", "Automobiles", "Charpings", "Cacti", "Alcohal", "AlphaRomeo"];
+var buttons = [];
 
 //<-------------------------------------------------------------->
 function renderButtons(){
@@ -28,15 +28,28 @@ $(document).ready(function(){
 		addButton($("#gif-show").val().trim()); 
     $("#gif-show").val("");
     
-	});
+  });
+  
+
+
+
+  $(document).on('click', '.data-input', function(event) {
+    console.log(event);
+    console.log($(this));
+    let buttonText = event.currentTarget.innerText;
+    getGif(buttonText);
+    console.log({buttonText})
+  })
+
+
 });
 
-function getGif(){
+function getGif(input){
   
   //var input = $('#gif-show')
   //let input = $(this).attr('.btn-name');
-  //var input = $('#gif-show').val();
-  var input = $('#gif-show').attr('data-input');
+  //var input = $('.data-input').attr('submit');
+  // var input = $('.gif-show').attr('.data-input');
 
   var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ input +"&api_key=w1S2aIWlkRlLJu0hsXW7RjISiJS93vYU&limit=8";
 
@@ -71,6 +84,8 @@ function getGif(){
 
 }
 
+// $(document).on("click", ".data-input", getGif);
+// $(document).on("click", ".data-input", getGif);
 
 
 

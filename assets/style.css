@@ -16,9 +16,10 @@ input {
 .container {
     margin: auto;
 }
-body {
+/*body {
     background-color: aqua;
 }
+*/
 h1 {
     text-decoration: underline black;
     font-family: 'Alfa Slab One', cursive;
