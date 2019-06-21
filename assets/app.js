@@ -4,8 +4,8 @@ var buttons = ["Planes", "Trains", "Automobiles", "Charpings", "Cacti", "PabstBl
 function renderButtons(){
 	for(var i = 0; i < buttons.length; i++) {
 		var newButton = $("<button>");
-		newButton.addClass("btn");
-		newButton.addClass("gif-button");
+		//newButton.addClass("btn");
+		newButton.addClass("data-input");
 		newButton.text(buttons[i]);
 		$("#button-container").append(newButton);
 	}
@@ -34,9 +34,9 @@ $(document).ready(function(){
 function getGif(){
   
   //var input = $('#gif-show')
-  let input = $(this).attr('btn-name');
-  //var input = $('#gif-show').val();
-
+  //let input = $(this).attr('.btn-name');
+  var input = $('#gif-show').val();
+  //var input = $('#gif-show').attr('data-input');
 
   var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ input +"&api_key=w1S2aIWlkRlLJu0hsXW7RjISiJS93vYU&limit=8";
 
