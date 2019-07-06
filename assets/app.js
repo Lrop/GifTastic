@@ -51,7 +51,7 @@ function getGif(input){
   //var input = $('.data-input').attr('submit');
   // var input = $('.gif-show').attr('.data-input');
 
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ input +"&api_key=w1S2aIWlkRlLJu0hsXW7RjISiJS93vYU&limit=8";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q="+ input +"&api_key=w1S2aIWlkRlLJu0hsXW7RjISiJS93vYU&limit=8";
 
   $.ajax({
     url: queryURL,
